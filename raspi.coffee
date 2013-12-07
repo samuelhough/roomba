@@ -1,4 +1,4 @@
-Cylon = require("../..")
+Cylon = require("cylon")
 Arm = require('./arm')
 arm = null
 
