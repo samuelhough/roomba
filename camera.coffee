@@ -2,7 +2,7 @@ exec = require("child_process").exec
 sys = require("sys")
 fs = require('fs')
 
-class Camera
+module.exports = class Camera
   takeImage: ->
     console.log( 'taking image' )
     exec "raspicamera -o image.jpg", ->
