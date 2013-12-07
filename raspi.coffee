@@ -1,0 +1,20 @@
+Cylon = require("../..")
+Arm = require('./arm')
+arm = null
+
+
+Cylon.robot(
+  connection:
+    name: "raspi"
+    adaptor: "raspi"
+    port: "/dev/ttyACM0"
+
+  device:
+    name: "servo"
+    driver: "servo"
+    pin: 11
+
+  work: ( my ) ->
+    arm = new Arm( my.servo )
+
+).start()
