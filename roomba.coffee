@@ -1,6 +1,6 @@
 robot = require("create-oi");
 
-class Roomba
+module.exports = class Roomba
   speed: 100
   constructor: ->
     robot.init({ serialport: "/dev/ttyUSB0" })
