@@ -8,15 +8,12 @@ roomba = new Roomba()
 Camera = require('./camera')
 camera = new Camera()
 
-express = require('express')
-
 
 express = require("express")
 app = express()
 app.get "/", (req, res) ->
   res.send camera.getImage()
 
-app.listen 3000
 
 Cylon.robot(
   connection:
@@ -32,5 +29,9 @@ Cylon.robot(
   work: ( my ) ->
     arm = new Arm( my.servo )
     arm.lookUp()
+    app.listen 3000
 
 ).start()
+
+
+
