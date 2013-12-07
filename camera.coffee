@@ -3,6 +3,11 @@ sys = require("sys")
 fs = require('fs')
 
 module.exports = class Camera
+  constructor: ->
+    setInterval( =>
+      @takeImage()
+    , 5000)
+    
   takeImage: ->
     console.log( 'taking image' )
     exec "raspicamera -o image.jpg", ->
