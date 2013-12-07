@@ -7,10 +7,10 @@ module.exports = class Camera
     setInterval( =>
       @takeImage()
     , 5000)
-    
+
   takeImage: ->
     console.log( 'taking image' )
-    exec "raspicamera -o image.jpg", ->
+    exec "raspistill -o image.jpg", ->
       console.log('image taken')
       console.log(arguments)
 
