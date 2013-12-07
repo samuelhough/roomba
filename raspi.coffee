@@ -5,6 +5,8 @@ arm = null
 Roomba = require('./roomba')
 roomba = new Roomba()
 
+Camera = require('./camera')
+camera = new Camera()
 
 Cylon.robot(
   connection:
