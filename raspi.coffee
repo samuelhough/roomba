@@ -27,8 +27,7 @@ Cylon.robot(
     pin: 11
 
   work: ( my ) ->
-    arm = new Arm( my.servo )
-    arm.lookUp()
+    my.servo.angle( 45 )
     app.listen 3000
 
 ).start()
