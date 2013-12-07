@@ -1,0 +1,23 @@
+{
+  "name": "roombachat",
+  "version": "0.0.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "index.js",
+  "dependencies": {
+    "create-oi": "~0.0.4",
+    "cylon": "~0.7.0",
+    "nodeunit": "~0.8.2",
+    "s2serial": "~0.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/samuelhough/roomba.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "gitHead": "309ebee156d0cd6d0f4b177902420ac9ce1f3f8a"
+}
