@@ -1,40 +1,31 @@
-Roomba = require("../roomba.js").Roomba
+robot = require("create-oi");
 
 class Roomba
+  speed: 100
   constructor: ->
-    @bot = new Roomba(sp:
-      path: "/dev/ttyAMA0"
-      options:
-        baudrate: 57600
-    )
-    @bot.once "ready", =>
-      console.log "spinning up"
+    robot.init({ serialport: "/dev/ttyUSB0" })
+    robot.on "ready", =>  
       @ready()
-    @bot.on "sense", (sensors) =>
-      @onSense.apply( @, arguments )
-      
+
+    robot.on "bump", (bumpEvent) =>
+      @onBump.apply( @, arguments )      
 
   ready: ->
     @isReady = true
     @forward()
 
+  stop: ->
+    if @isReady
+      robot.drive( 0, 0 )
 
   forward: ->
     if @isReady 
-      @bot.send
-        cmd: "DRIVE"
-        data: [500, -1]
+      robot.drive( @speed, 0);
 
   reverse: ->
-    if @isReady
-      @bot.send
-        cmd: "DRIVE"
-        data: [0, -1]
-
-  onSense: ( sensors )->
-    if sensors.bump.right or sensors.bump.left
-      console.log "bump detected"
-      @reverse()
+    
+  onBump: ( sensors )->
+    @stop()
      
 
 
