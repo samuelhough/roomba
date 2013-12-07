@@ -2,6 +2,9 @@ Cylon = require("../..")
 Arm = require('./arm')
 arm = null
 
+Roomba = require('./roomba')
+roomba = new Roomba()
+
 
 Cylon.robot(
   connection:
